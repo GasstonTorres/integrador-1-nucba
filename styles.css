@@ -1,16 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Rubik', sans-serif;
     text-decoration: none;
 }
 
 :root {
-    --main-color: #CE4257;
-    --text-color: #FDFCDC;
+    --main-color: #880044;
+    --text-color: #FFEE88;
+    --second-color: #DD1155;
+    --background-theme: #880044 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23fdfcdc' fill-opacity='0.12'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    --button1: #AA1155;
+    --button1-text: #ffffff;
+}
+
+html {
+    width: 100%;
+}
+
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-theme)
 }
 
 .header-container {
@@ -18,35 +35,45 @@
     height: 100px;
     display: flex;
     justify-content: center;
+    background-color: var(--main-color);
+
 }
 
 header {
-    width: 100%;
+    width: 90%;
+    max-width: 1440px;
     height: 100%;
-    background-color: #CE4257;
+    max-width: 1440px;
+    background-color: var(--main-color);
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding-left: 40px;
-    padding-right: 40px;
+    justify-content: center;
+}
+
+.header-logo {}
+
+.nav-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end
 }
 
 nav {
     height: 100%;
     display: flex;
     gap: 30px;
-    color: var(--text-color);
-    align-items: center;
-}
-
-.nav-container {
-    display: flex;
-    gap: 30px;
+    color: var(--main-color);
     align-items: center;
 }
 
 nav span {
     color: var(--text-color)
+}
+
+.user-cart {
+    display: flex;
+    gap: 30%;
 }
 
 .nav-cart button,
@@ -66,7 +93,11 @@ nav span {
 /*HERO*/
 
 .main-container {
+    max-width: 1440px;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 main {
@@ -78,6 +109,7 @@ main {
     width: 100%;
     display: flex;
     justify-content: space-around;
+    gap: 10px;
 }
 
 .hero-text {
@@ -88,8 +120,6 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #fdfcdc;
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23dbd889' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 .hero-image {
@@ -98,6 +128,13 @@ main {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    border-bottom: #ffea70 10px;
+}
+
+.image-border {
+    width: 100%;
+    height: 100%;
+    color: #ffea70;
 }
 
 .hero-text-container {
@@ -113,39 +150,40 @@ main {
 
 .hero-text-container h1 {
     font-size: 24px;
-    color: var(--main-color);
+    color: var(--text-color);
     font-weight: 500;
 }
 
 .hero-text-container h2 {
     font-size: 60px;
-    color: var(--main-color);
+    color: var(--text-color);
     font-weight: 500;
 }
 
 .hero-text-container button {
     width: 250px;
     height: 60px;
-    border-radius: 50px;
     border: none;
     font-size: 18px;
-    font-weight: 300;
-    background-color: #861021;
-    color: var(--text-color);
+    font-weight: 500;
+    background-color: var(--text-color);
+    color: var(--main-color);
     text-transform: uppercase;
     cursor: pointer;
+    box-shadow: 2px 9px 20px 5px rgba(0, 0, 0, 0.26);
+    -webkit-box-shadow: 2px 9px 20px 5px rgba(0, 0, 0, 0.26);
+    -moz-box-shadow: 2px 9px 20px 5px rgba(0, 0, 0, 0.26);
 }
 
+/*Presentación*/
+
 .presentacion-container {
-    background-color: var(--main-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 40px;
-    gap: 30px;
-    background-color: #ce4257;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23fdfcdc' fill-opacity='0.12'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    gap: 50px;
 }
 
 .presentacion-image-container {
@@ -165,20 +203,52 @@ main {
     font-size: 24px;
 }
 
+.hr-line {
+    width: 80%;
+    height: 0.7px;
+    background-color: #ffea708b;
+}
+
 /*PRODUCTOS*/
+
+.products-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.products-container h3 {
+    font-size: 24px;
+    color: var(--text-color);
+    padding-bottom: 10px;
+}
+
+.products-container p {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
 
 .products-items-container {
     display: grid;
+    width: 90%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: ;
-    gap: 10px: padding: 0 10px;
+    gap: 20px;
+    padding: 0 20px;
+
 }
 
 .product {
-    height: 250px;
+    height: 300px;
     width: 100%;
     background-color: var(--text-color);
 }
+
 
 .products-dulces .product-image {
     height: 70%;
@@ -206,9 +276,10 @@ main {
     width: 100%;
     background-image: url("images/coffee.jpg");
     background-size: cover;
+
 }
 
-.product-text {
+.products-items-container .product .product-text {
     width: 100%;
     height: 30%;
     display: flex;
@@ -216,7 +287,12 @@ main {
     align-items: center;
     color: var(--main-color);
     font-size: 24px;
-    font-weight: 300;
+    font-weight: 500;
+}
+
+.products-items-container .product:nth-child(odd) .product-text {
+    background-color: #ffea70;
+
 }
 
 /*COMO COMPRAR*/
@@ -227,8 +303,6 @@ main {
     justify-content: center;
     align-items: center;
     padding: 50px 0;
-    background-color: #ce4257;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23fdfcdc' fill-opacity='0.12'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 .how-to-buy-container h3 {
@@ -268,19 +342,18 @@ main {
     align-items: center;
     width: 50px;
     height: 50px;
-    border-radius: 50px;
-    background-color: var(--text-color);
     position: relative;
     top: 0;
-    font-size: 24px;
-    color: var(--main-color);
+    font-size: 32px;
+    color: var(--text-color)
 }
 
 .steps-text {
-    height: 150px;
+    height: 130px;
     text-align: center;
     color: var(--text-color);
     font-weight: 500;
+    font-size: 24px;
 
 }
 
@@ -289,17 +362,18 @@ main {
     justify-content: center;
     align-items: center;
     gap: 40px;
+    padding-top: 10px;
 }
 
 .buttons-steps-account button {
     width: 150px;
     height: 50px;
-    border-radius: 50px;
-    border: none;
-    background-color: #a0265d;
+    border: solid 1px var(--text-color);
+    background-color: var(--button1);
     color: var(--text-color);
     cursor: pointer;
     font-weight: 500;
+
 }
 
 
@@ -356,7 +430,7 @@ main {
     .products-items-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 250px 250px;
-        gap: 0;
+        grid-template-rows: ();
+        gap: 20px;
     }
 }
